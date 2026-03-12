@@ -637,6 +637,326 @@ footer p {
   to { opacity: 1; }
 }
 
+/* ===== FANDOM WORLDS SECTION ===== */
+.worlds-section {
+  padding: 6rem 2rem;
+  position: relative;
+  z-index: 5;
+  background: linear-gradient(180deg, var(--cream-warm), #E5DCD3 30%, #DDD4CB 70%, var(--cream-warm));
+}
+
+.worlds-section .section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 300;
+  text-align: center;
+  color: var(--coral-deep);
+  margin-bottom: 0.5rem;
+}
+
+.worlds-section .section-subtitle {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  text-align: center;
+  color: var(--rose);
+  margin-bottom: 3rem;
+}
+
+.worlds-grid {
+  max-width: 1000px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+
+/* --- Hogwarts Letter --- */
+.hp-card {
+  background: #F5E6C8;
+  border-radius: 4px;
+  padding: 0;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+  box-shadow: 0 4px 24px rgba(80,50,20,0.15);
+  transition: transform 0.4s, box-shadow 0.4s;
+  border: 1px solid #D4B896;
+}
+
+.hp-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(80,50,20,0.2); }
+
+.hp-envelope {
+  padding: 2rem;
+  text-align: center;
+  position: relative;
+}
+
+.hp-seal {
+  width: 60px; height: 60px;
+  margin: 0 auto 1rem;
+  background: radial-gradient(circle, #8B0000, #5C0000);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 2px 8px rgba(92,0,0,0.4), inset 0 1px 2px rgba(255,255,255,0.2);
+  transition: transform 0.5s;
+}
+
+.hp-card:hover .hp-seal { transform: rotate(15deg); }
+
+.hp-envelope h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #3D2815;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.hp-envelope .hp-address {
+  font-family: 'Caveat', cursive;
+  font-size: 1rem;
+  color: #6B4C30;
+}
+
+.hp-envelope .hp-tap {
+  font-family: 'Caveat', cursive;
+  font-size: 0.9rem;
+  color: #8B6914;
+  margin-top: 1rem;
+  opacity: 0.7;
+}
+
+.hp-letter {
+  display: none;
+  padding: 2rem;
+  background: linear-gradient(135deg, #FDF5E6, #F5E6C8);
+  border-top: 2px dashed #D4B896;
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.hp-letter.show { display: block; }
+
+.hp-letter p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #3D2815;
+  font-style: italic;
+}
+
+.hp-letter .hp-sig {
+  font-family: 'Caveat', cursive;
+  font-size: 1.2rem;
+  color: #8B0000;
+  margin-top: 1rem;
+  font-style: normal;
+}
+
+/* --- Bridgerton Card --- */
+.bridgerton-card {
+  background: linear-gradient(135deg, #F8F0E8, #EDE3D7);
+  border-radius: 16px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(61,44,46,0.1);
+  transition: transform 0.4s, box-shadow 0.4s;
+  border: 2px solid #D4C5B5;
+}
+
+.bridgerton-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(61,44,46,0.15); }
+
+.bridgerton-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 4px;
+  background: linear-gradient(90deg, #B8860B, #D4A574, #B8860B);
+}
+
+.bridgerton-front {
+  padding: 2rem;
+  text-align: center;
+}
+
+.bridgerton-front .quill { font-size: 2rem; margin-bottom: 0.8rem; display: block; }
+
+.bridgerton-front h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.3rem;
+  font-weight: 600;
+  font-style: italic;
+  color: #5C4033;
+  margin-bottom: 0.5rem;
+}
+
+.bridgerton-front .whistle-intro {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: #7A5C47;
+  line-height: 1.6;
+}
+
+.bridgerton-front .b-tap {
+  font-family: 'Caveat', cursive;
+  font-size: 0.9rem;
+  color: #B8860B;
+  margin-top: 1rem;
+  opacity: 0.7;
+}
+
+.bridgerton-gossip {
+  display: none;
+  padding: 2rem;
+  border-top: 1px solid #D4C5B5;
+  background: linear-gradient(135deg, #FFF8F0, #F8F0E8);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.bridgerton-gossip.show { display: block; }
+
+.bridgerton-gossip p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  color: #3D2815;
+  font-style: italic;
+}
+
+.bridgerton-gossip .whistle-sig {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: #B8860B;
+  margin-top: 1rem;
+  text-align: right;
+  font-style: normal;
+}
+
+/* --- Shadowhunters Card --- */
+.sh-card {
+  background: linear-gradient(135deg, #1A1A2E, #16213E);
+  border-radius: 16px;
+  padding: 0;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  transition: transform 0.4s, box-shadow 0.4s;
+  border: 1px solid #2A2A4A;
+}
+
+.sh-card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,0,0,0.4); }
+
+.sh-front {
+  padding: 2rem;
+  text-align: center;
+}
+
+.sh-rune-container {
+  width: 80px; height: 80px;
+  margin: 0 auto 1rem;
+  position: relative;
+}
+
+.sh-rune-svg {
+  width: 80px; height: 80px;
+}
+
+.sh-rune-svg .rune-path {
+  fill: none;
+  stroke: #C4A35A;
+  stroke-width: 2;
+  stroke-dasharray: 300;
+  stroke-dashoffset: 300;
+  stroke-linecap: round;
+  transition: stroke-dashoffset 2s ease-out;
+  filter: drop-shadow(0 0 6px rgba(196,163,90,0.5));
+}
+
+.sh-card.activated .rune-path {
+  stroke-dashoffset: 0;
+}
+
+.sh-rune-glow {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90px; height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(196,163,90,0.15), transparent 70%);
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.sh-card.activated .sh-rune-glow { opacity: 1; animation: runeGlow 2s infinite; }
+
+@keyframes runeGlow {
+  0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.5; }
+  50% { transform: translate(-50%, -50%) scale(1.15); opacity: 1; }
+}
+
+.sh-front h3 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.2rem;
+  font-weight: 400;
+  color: #C4A35A;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+
+.sh-front .sh-sub {
+  font-family: 'Nunito', sans-serif;
+  font-size: 0.85rem;
+  color: #8888AA;
+}
+
+.sh-front .sh-tap {
+  font-family: 'Caveat', cursive;
+  font-size: 0.9rem;
+  color: #C4A35A;
+  margin-top: 1rem;
+  opacity: 0.6;
+}
+
+.sh-oath {
+  display: none;
+  padding: 2rem;
+  border-top: 1px solid #2A2A4A;
+  background: linear-gradient(135deg, #1A1A2E, #0F0F23);
+  animation: fadeInUp 0.6s ease-out;
+}
+
+.sh-oath.show { display: block; }
+
+.sh-oath p {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.05rem;
+  line-height: 1.9;
+  color: #C4A35A;
+  font-style: italic;
+  text-align: center;
+}
+
+.sh-oath .oath-glow {
+  color: #E8D5A3;
+  text-shadow: 0 0 10px rgba(196,163,90,0.4);
+}
+
+.sh-oath .sh-end {
+  font-family: 'Caveat', cursive;
+  font-size: 1.1rem;
+  color: #8888AA;
+  margin-top: 1rem;
+  text-align: center;
+  font-style: normal;
+}
+
 /* ===== RESPONSIVE ===== */
 @media (max-width: 768px) {
   nav { gap: 1.2rem; padding: 0.9rem 1rem; flex-wrap: wrap; justify-content: center; }
@@ -677,14 +997,19 @@ footer p {
 
   footer { padding: 3rem 1.5rem; }
   footer p { font-size: 1.1rem; }
+
+  .worlds-section { padding: 4rem 1.2rem; }
+  .worlds-section .section-title { font-size: 1.8rem; }
+  .worlds-grid { grid-template-columns: 1fr; }
+  nav a { font-size: 0.85rem; }
 }
 
 @media (max-width: 400px) {
-  nav { gap: 0.8rem; padding: 0.7rem 0.6rem; }
-  nav a { font-size: 0.9rem; }
+  nav { gap: 0.6rem; padding: 0.7rem 0.4rem; }
+  nav a { font-size: 0.8rem; }
   .hero-content h1 { font-size: 2.5rem; }
   .hero-content .tagline { font-size: 0.9rem; }
-  .messages-section, .garden-section, .puzzle-section { padding: 3rem 1rem; }
+  .messages-section, .garden-section, .puzzle-section, .worlds-section { padding: 3rem 1rem; }
   .message-card { padding: 1.2rem; }
   .garden-flower { width: 65px; height: 95px; }
   .puzzle-step { padding: 1.2rem; }
@@ -774,6 +1099,7 @@ footer p {
   <a href="#home">Home</a>
   <a href="#messages">Love Notes</a>
   <a href="#garden">Garden</a>
+  <a href="#worlds">Worlds</a>
   <a href="#puzzle">Mystery</a>
 </nav>
 
@@ -873,6 +1199,93 @@ footer p {
       I planted this little digital garden just for you, so whenever you feel down,
       you can come back here and remember: <strong>you are loved, endlessly.</strong> 🌸
     </p>
+  </div>
+</section>
+
+<!-- ===== FANDOM WORLDS ===== -->
+<section class="worlds-section" id="worlds">
+  <h2 class="section-title">Our Worlds Together</h2>
+  <p class="section-subtitle">tap each one to step into the story...</p>
+
+  <div class="worlds-grid">
+
+    <!-- HARRY POTTER -->
+    <div class="hp-card" id="hp-card" onclick="openHPLetter()">
+      <div class="hp-envelope">
+        <div class="hp-seal">⚡</div>
+        <h3>Hogwarts School of Witchcraft & Wizardry</h3>
+        <p class="hp-address">Ms. Hannah — Wherever She May Be, The Brightest Room in the House</p>
+        <p class="hp-tap">tap the seal to open...</p>
+      </div>
+      <div class="hp-letter" id="hp-letter">
+        <p>Dear Ms. Hannah,</p>
+        <br>
+        <p>We are pleased to inform you that you have been accepted into the heart of someone who loves you very much.</p>
+        <br>
+        <p>You possess the courage of a Gryffindor, the loyalty of a Hufflepuff, the wisdom of a Ravenclaw, and the ambition of a Slytherin — truly, the Sorting Hat would have the hardest time with you.</p>
+        <br>
+        <p>Your required equipment includes: one endless supply of sweets (Honeydukes has been notified), a lifetime subscription to sunsets, and the knowledge that you are someone's entire Patronus — the happiest memory made real.</p>
+        <br>
+        <p>Term begins whenever you smile.</p>
+        <p class="hp-sig">— The Office of Your Penguin, Order of Merlin First Class ⚡</p>
+      </div>
+    </div>
+
+    <!-- BRIDGERTON -->
+    <div class="bridgerton-card" id="bridgerton-card" onclick="openWhistledown()">
+      <div class="bridgerton-front">
+        <span class="quill">🪶</span>
+        <h3>Lady Whistledown's Society Papers</h3>
+        <p class="whistle-intro">A most extraordinary report from this author, regarding a certain diamond of incomparable radiance...</p>
+        <p class="b-tap">tap to read the gossip...</p>
+      </div>
+      <div class="bridgerton-gossip" id="bridgerton-gossip">
+        <p>Dearest Gentle Reader,</p>
+        <br>
+        <p>This author has it on the highest authority that a certain Miss Hannah has been declared the Incomparable of not merely this season, but of every season henceforth.</p>
+        <br>
+        <p>She was observed lighting up a room with nothing more than her smile — a feat that left several chandeliers quite jealous. Her grace while dancing has been described as "unfairly enchanting," and her fondness for sweets is matched only by the sweetness of her character.</p>
+        <br>
+        <p>It is also reported that a certain devoted gentleman from the northern city of Baguio has made his intentions most clear: he intends to court her affections across any distance, with a dedication that even the ton finds remarkable.</p>
+        <br>
+        <p>This author believes they shall be the love story that all of London speaks of for generations.</p>
+        <p class="whistle-sig">— Lady Whistledown 🪶</p>
+      </div>
+    </div>
+
+    <!-- SHADOWHUNTERS -->
+    <div class="sh-card" id="sh-card" onclick="activateRune()">
+      <div class="sh-front">
+        <div class="sh-rune-container">
+          <div class="sh-rune-glow"></div>
+          <svg class="sh-rune-svg" viewBox="0 0 80 80">
+            <!-- Parabatai rune - stylized infinity/bond symbol -->
+            <path class="rune-path" d="M20,40 C20,25 35,15 40,25 C45,15 60,25 60,40 C60,55 45,65 40,55 C35,65 20,55 20,40 Z M30,35 Q40,20 50,35 M30,45 Q40,60 50,45 M40,28 L40,52" />
+          </svg>
+        </div>
+        <h3>Parabatai</h3>
+        <p class="sh-sub">The bond that transcends all others</p>
+        <p class="sh-tap">tap to activate the rune...</p>
+      </div>
+      <div class="sh-oath" id="sh-oath">
+        <p class="oath-glow">
+          "Entreat me not to leave thee,<br>
+          Or to return from following after thee —<br>
+          For whither thou goest, I will go,<br>
+          And where thou lodgest, I will lodge.<br>
+          Thy people shall be my people, and thy God my God.<br>
+          Where thou diest, will I die, and there will I be buried.<br>
+          The Angel do so to me, and more also,<br>
+          If aught but death part thee and me."
+        </p>
+        <br>
+        <p style="color: #C4A35A; font-style: normal; font-size: 0.95rem;">
+          Hannah — you are my parabatai. Not by rune, but by choice. From Baguio to Iloilo, across every distance and shadow, I am bound to you. Always fighting for you. Always beside you. Even when we're apart.
+        </p>
+        <p class="sh-end">— Your warrior, your Penguin 🗡️</p>
+      </div>
+    </div>
+
   </div>
 </section>
 
@@ -1296,6 +1709,41 @@ function ambientPetals() {
   }, 2000);
 }
 ambientPetals();
+
+// ===== FANDOM WORLDS INTERACTIONS =====
+function openHPLetter() {
+  const letter = document.getElementById('hp-letter');
+  letter.classList.toggle('show');
+  const seal = document.querySelector('.hp-seal');
+  if (letter.classList.contains('show')) {
+    seal.style.transform = 'rotate(360deg) scale(0.8)';
+    seal.style.opacity = '0.6';
+  } else {
+    seal.style.transform = 'rotate(0deg) scale(1)';
+    seal.style.opacity = '1';
+  }
+}
+
+function openWhistledown() {
+  const gossip = document.getElementById('bridgerton-gossip');
+  gossip.classList.toggle('show');
+}
+
+function activateRune() {
+  const card = document.getElementById('sh-card');
+  const oath = document.getElementById('sh-oath');
+
+  if (!card.classList.contains('activated')) {
+    card.classList.add('activated');
+    setTimeout(() => {
+      oath.classList.add('show');
+      oath.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }, 1500);
+  } else {
+    card.classList.remove('activated');
+    oath.classList.remove('show');
+  }
+}
 
 // ===== SMOOTH NAV SCROLL =====
 document.querySelectorAll('nav a').forEach(link => {
