@@ -802,7 +802,7 @@ footer p {
       <h3 class="card-title">Golden Hour</h3>
       <p class="card-text">"Every sunset paints the sky in the colors of how I feel about you — warm, glowing, endless."</p>
       <div class="card-hidden">
-        When the sun sets where you are, I hope you look up and let that golden light wash over you — because somewhere far away, I'm watching the same sun disappear, wishing I could be right next to you, holding your hand as the sky turns to fire. We share the same sunset, always.
+        When the sun sets over Iloilo, I hope you look up and let that golden light wash over you — because up here in Baguio, I'm watching the same sun disappear behind the pine trees, wishing I could be right next to you, holding your hand as the sky turns to fire. Same sunset, same moment — just a few islands apart.
       </div>
       <p class="click-hint">tap to reveal more ♡</p>
     </div>
@@ -812,7 +812,7 @@ footer p {
       <h3 class="card-title">The Way You Dance</h3>
       <p class="card-text">"You move like the world is your stage and every song was written for you."</p>
       <div class="card-hidden">
-        I think about you dancing and it makes my whole day brighter. The way you lose yourself in the music, the way your smile lights up — it's one of my favorite things about you. One day, I'll be right there dancing with you, even if I have two left feet.
+        I think about you dancing and it makes my whole day brighter. The way you lose yourself in the music, the way your smile lights up — it's one of my favorite things about you. You'd fit right into a Bridgerton ball, outshining everyone in the room. One day, I'll be right there dancing with you, even if I have two left feet.
       </div>
       <p class="click-hint">tap to reveal more ♡</p>
     </div>
@@ -822,7 +822,7 @@ footer p {
       <h3 class="card-title">Sweet Like You</h3>
       <p class="card-text">"No dessert in the world could ever be as sweet as you are to me."</p>
       <div class="card-hidden">
-        You know what's funny? Every time I eat something sweet, I think of you. Not because of the sugar — but because of the way you make everything in life feel a little more delightful, a little more worth savoring. You are my favorite kind of sweetness.
+        You know what's funny? Every time I eat something sweet, I think of you. Not because of the sugar — but because of the way you make everything in life feel a little more delightful, a little more worth savoring. If Honeydukes were real, I'd buy you the whole shop. You are my favorite kind of sweetness.
       </div>
       <p class="click-hint">tap to reveal more ♡</p>
     </div>
@@ -852,7 +852,7 @@ footer p {
       <h3 class="card-title">My Promise</h3>
       <p class="card-text">"Across any distance, through every sunset apart — I choose you, always."</p>
       <div class="card-hidden">
-        I know long distance is hard. There are days when all I want is to be next to you, and a screen just isn't enough. But I want you to know — I'd cross every mile, wait through every timezone, endure every goodbye... because you are worth all of it and so much more. This is my promise to you.
+        I know the distance from Baguio to Iloilo is hard. There are days when all I want is to be next to you, and a screen just isn't enough. But I want you to know — I'd cross every island, take every boat and bus, endure every goodbye... because you are worth all of it and so much more. This is my promise to you.
       </div>
       <p class="click-hint">tap to reveal more ♡</p>
     </div>
@@ -901,13 +901,13 @@ footer p {
         <br>
         <p>If you're reading this, it means you solved every clue — but honestly, was there ever any doubt? You're the smartest, most wonderful person I know.</p>
         <br>
-        <p>I made this little corner of the internet just for you. Because even though there are miles between us right now, my love for you doesn't know distance. It doesn't care about time zones or borders.</p>
+        <p>I made this little corner of the internet just for you. Because even though Baguio and Iloilo are islands apart, we share the same sky, the same sun, and the same time — and that makes you feel a little closer.</p>
         <br>
-        <p>When the sunset fills the sky, I hope you feel my arms around you. When you dance, know that my heart dances with you. When you eat something sweet, remember that nothing is sweeter than what we have.</p>
+        <p>When the sunset paints the sky over Iloilo, know that I'm watching the same one fade behind the mountains in Baguio, thinking of you. When you dance, my heart dances with you. When you eat something sweet, remember that nothing is sweeter than what we have.</p>
         <br>
-        <p>You are my favorite person, my best friend, my Gerbera daisy in a world of ordinary flowers.</p>
+        <p>You are my favorite person, my best friend, my Gerbera daisy in a world of ordinary flowers. If this were Harry Potter, you'd be my Patronus — the thing that makes the darkness go away. If this were Bridgerton, you'd be the diamond of the season. And if this were the Shadowhunters world, you'd be my parabatai — my other half, bound to me by something deeper than runes could ever mark.</p>
         <br>
-        <p>I love you more than words on a screen could ever say — but I'll never stop trying.</p>
+        <p>I love you more than words on a screen could ever say — but I'll never stop trying. One day the distance between Baguio and Iloilo won't matter anymore, because I'll be right there next to you.</p>
         <br>
         <p>Until I can hold you again...</p>
       </div>
@@ -1421,6 +1421,20 @@ function toggleMusic() {
     btn.title = 'Play calming music';
   }
 }
+
+// Auto-play music on first user interaction (browsers require a gesture)
+let autoStarted = false;
+function autoStartMusic() {
+  if (autoStarted) return;
+  autoStarted = true;
+  toggleMusic();
+  document.removeEventListener('click', autoStartMusic);
+  document.removeEventListener('scroll', autoStartMusic);
+  document.removeEventListener('touchstart', autoStartMusic);
+}
+document.addEventListener('click', autoStartMusic);
+document.addEventListener('scroll', autoStartMusic);
+document.addEventListener('touchstart', autoStartMusic);
 </script>
 
 </body>
